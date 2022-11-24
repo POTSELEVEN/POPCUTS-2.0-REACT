@@ -5,16 +5,37 @@ import { Presentation } from '../components/presentation'
 import { ItemCard } from '../components/card'
 
 import { cartInitialState, cartReducer } from '../components/shared/cart/cartReducer'
-import { useReducer } from 'react'
-import { useState } from 'react'
-import { CardSection } from '../components/shared/cardsection'
+import { useReducer, useState, useEffect } from 'react'
+import { CardSectionP } from '../components/shared/cardsectionP'
 
+import Global from '../global'
+import axios from 'axios'
 
 
 
 
 export const Products = ({stateCart, dispatch}) => {
 
+  
+  const [products, setProducts] = useState([])
+
+  const url = Global.urlP
+
+  
+
+
+  useEffect(() => {
+      getProducts();
+      console.log(products);
+  },[products.length]);
+
+
+
+  const getProducts = () => {
+      axios.get(url + "products").then(res => {
+          setProducts(res.data.products);
+      });
+  }
   
 
   
@@ -26,19 +47,22 @@ export const Products = ({stateCart, dispatch}) => {
   
 
   return (
-    <div className='recipes page'>
+    <div className='products page'>
     
-    <Header activepage='recipes' pages={[ 'home', 'recipes', 'products' ]} statecart={stateCart} dispatch={dispatch}/>
+    <Header activepage='products' pages={[ 'home', 'recipes', 'products' ]} statecart={stateCart} dispatch={dispatch}/>
 
     {/* <CartCard stateCart={stateCart} dispatch={dispatch}/> */}
 
     <Presentation info={stateCart.ProductsP[0]}/>
+    <div className={`seccion seccion-b seccion-card container`}>
 
-    <CardSection path={'Product'} info={stateCart.ProductsP[0]} variant={'b'}/>
+    <div className="container container-cards container-cards-products">
 
-    <CardSection path={'Product'} info={stateCart.ProductsP[1]} variant={'b'}/>
+    { products.map((item, i)=> {return <div className="container"><ItemCard i={i} path={'/Product'} item={item} /> </div>})}
 
+    </div>
 
+</div>
 
 
     <Footer variant={'b'} state={stateCart} dispatch={dispatch}></Footer>
@@ -48,5 +72,4 @@ export const Products = ({stateCart, dispatch}) => {
     </div>
   )
 }
-
 

@@ -52,6 +52,15 @@
     align-items: center;
 
 }
+
+.info-text{
+
+display: flex;
+flex-direction: column ;
+
+
+}
+
 .item-card{
 
     background-color: var(--primary);
@@ -63,3 +72,109 @@
     background-color: var(--colorsecundario);
 
 }
+
+.container-video{
+
+    background-color: var(--colorsecundario);
+    padding: 2rem;
+
+ border-radius: 2rem;
+
+ width: 40%;
+
+ height: 35rem;
+
+
+
+}
+.single-info{
+
+display: flex;
+flex-direction: column;
+
+}
+
+iframe {
+
+border-radius: 2rem;
+
+max-width: 50rem  !important;
+
+}
+
+.loginpopup{
+    position: fixed;
+
+    z-index: 1000;
+
+background-color: var(--primary);
+
+
+
+right: 5%;
+border-radius: 1.25rem;
+
+}
+
+.col{
+    padding: 0rem;
+    border-radius: 1rem;
+}
+
+.my-5{
+    margin: 0rem !important;
+    border-radius: 1rem;
+
+}
+
+.row{
+
+    border-radius: 1rem;
+
+}
+
+.card-body{
+
+    border-radius: 1.25rem;
+
+}
+
+.container-fluid{
+
+    border-radius: 1.25rem;
+
+}
+
+.card{
+
+    border-radius: 1.25rem;
+
+}
+
+.--primary{
+
+    background-color: var(--primary);
+}
+
+.--light{
+
+    background-color: var(--light);
+}
+
+.--cardcolor{
+
+    background-color: var(--cardcolor);
+
+}
+
+.button-chat{
+ 
+    z-index: 1000;
+
+    position: fixed;
+
+    right: 5rem;
+    bottom: 5rem;
+
+}
+

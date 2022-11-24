@@ -42,7 +42,8 @@ body {
 
     --negro: black;
     --blanco: white;
-    --primary: rgba(0, 209, 255, 0.72);
+    --primary: rgb(0, 209, 255);
+    --cardcolor: rgb(97, 226, 255);
 
     --colorsecundario: #7664BC;
     --light: #C0FBFF;
@@ -112,6 +113,8 @@ img{
 
     padding: 1rem;
     background-color: var(--light);
+
+    flex-direction: column;
 }
 
 .seccion-b, .seccion-b h1.title{

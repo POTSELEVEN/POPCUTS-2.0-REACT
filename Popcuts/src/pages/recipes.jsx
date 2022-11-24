@@ -34,9 +34,9 @@ export const Recipes = ({stateCart, dispatch}) => {
 
     <Presentation info={stateCart.Recipes[0]}/>
 
-    <CardSection path={'Recipe'} info={stateCart.Recipes[0]} variant={'b'}/>
+    <CardSection path={'/Recipe'} info={stateCart.Recipes[0]} variant={'b'}/>
 
-    <CardSection path={'Recipe'} info={stateCart.Recipes[1]} variant={'b'}/>
+    <CardSection path={'/Recipe'} info={stateCart.Recipes[2]} variant={'b'}/>
 
 
 

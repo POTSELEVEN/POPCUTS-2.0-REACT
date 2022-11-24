@@ -1,9 +1,5 @@
 
-.first-plane{
 
-right: -20rem ;
-
-}
 
 .second-plane {
 
@@ -81,6 +77,9 @@ right: -20rem ;
 
     color:var(--blanco);
 
+    width: 10rem;
+    max-width: none  ;
+
 }
 
 .button-icon-checkout{
@@ -119,6 +118,16 @@ right: -20rem ;
 .button-checkout{
 
     padding: 0.2rem 60% ;
+
+    background-color: var(--negro);
+
+    width: 10rem;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
 
 }
 

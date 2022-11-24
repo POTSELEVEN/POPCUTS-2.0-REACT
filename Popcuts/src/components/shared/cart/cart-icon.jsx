@@ -20,6 +20,9 @@ export const Cart = ({statecart, dispatch}) => {
       else {
         setcondition(false)
       }
+
+      
+
     }
 
     
@@ -54,9 +57,9 @@ export const Cart = ({statecart, dispatch}) => {
 
         
 
+            {condition && <CartCard  stateCart={statecart} dispatch={dispatch} condition={condition}/>}
 
-
-            <CartCard  stateCart={statecart} dispatch={dispatch} condition={condition}/>
+            
 
             
         

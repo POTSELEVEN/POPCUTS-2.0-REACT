@@ -1,5 +1,6 @@
 
 
+import { Link } from 'react-router-dom'
 import backIcon from '../../../assets/back-icon.svg'
 import plusIcon from '../../../assets/minus-icon.svg'
 import { ButtonIcon } from '../../tools/tags/buttonIcon'
@@ -7,6 +8,7 @@ import { CartList } from './cartList'
 
 
 export const CartCard = ({stateCart, dispatch, condition}) =>{
+    
 
 
 
@@ -35,7 +37,7 @@ export const CartCard = ({stateCart, dispatch, condition}) =>{
 
                 <ButtonIcon src={plusIcon} clase='button-icon-checkout'/>
 
-                <button className="button button-checkout "><h1 className="subtitle subtitle-checkout " >checkout</h1></button>
+                <button className="button button-checkout "><Link className="subtitle subtitle-checkout " to={"/https://www.paypal.me/elpotes11"}>checkout</Link></button>
 
             </div>
 

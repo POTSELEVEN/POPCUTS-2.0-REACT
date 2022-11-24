@@ -7,6 +7,7 @@ import { Recipe } from "./pages/recipe";
 import { Recipes } from "./pages/recipes";
 import { cartInitialState, cartReducer } from './components/shared/cart/cartReducer';
 import { useReducer } from 'react';
+import { ChatCard } from './pages/chat';
 // import { Admin } from "./pages/admin";
 // import { NotFoundPage } from "./NotFoundPage";
 
@@ -24,8 +25,10 @@ export const MainApp = () => {
         <Route path='Products' element={<Products stateCart={stateCart} dispatch={dispatch}/>}/>
         <Route path='Recipes' element={<Recipes stateCart={stateCart} dispatch={dispatch}/>}/>
         <Route path='Recipe' element={<Recipe stateCart={stateCart} dispatch={dispatch}/>}/>
+        <Route path='Chat' element={<ChatCard/>}/>
         {/* <Route path='Admin' element={<Admin/>}/> */}
         <Route path='/*' element={<Navigate to={'/'}/>}/>
+        
 
 
 

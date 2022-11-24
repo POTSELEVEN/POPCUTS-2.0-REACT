@@ -3,11 +3,15 @@ import { Footer } from '../components/shared/footer'
 import {CartCard} from '../components/shared/cart/cartCard'
 import { Presentation } from '../components/presentation'
 import { ItemCard } from '../components/card'
+import imgchat from '../assets/plasta.jpg'
 
 import { cartInitialState, cartReducer } from '../components/shared/cart/cartReducer'
 import { useReducer } from 'react'
 import { useState } from 'react'
-import { CardSection } from '../components/shared/cardsection'
+import {  CardSectionP } from '../components/shared/cardsectionP'
+import {  CardSectionR } from '../components/shared/cardsectionR'
+import { ButtonIcon } from '../components/tools/tags/buttonIcon'
+import { ChatSection } from '../components/chat/chatsection'
 
 
 
@@ -34,13 +38,13 @@ export const Home = ({stateCart, dispatch}) => {
 
     <Presentation info={stateCart.home[0]}/>
 
-    <CardSection path={'Product'} info={stateCart.home[1]} variant={'b'}/>
+    <CardSectionP path={'Product'} info={stateCart.home[1]} variant={'b'}/>
 
-    <CardSection path={'Recipe'} info={stateCart.home[2]} variant={'a'}/>
-
-
+    <CardSectionR path={'Recipe'} info={stateCart.home[2]} variant={'a'}/>
 
 
+    <ChatSection />
+    
     <Footer variant={'a'} state={stateCart} dispatch={dispatch}></Footer>
 
     

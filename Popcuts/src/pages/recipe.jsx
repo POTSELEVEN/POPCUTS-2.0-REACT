@@ -3,6 +3,7 @@ import { Footer } from '../components/shared/footer'
 import {CartCard} from '../components/shared/cart/cartCard'
 import { Presentation } from '../components/presentation'
 import { ItemCard } from '../components/card'
+import { SingleInfo } from '../components/tools/tags/SingleInfo'
 
 import { cartInitialState, cartReducer } from '../components/shared/cart/cartReducer'
 import { useReducer } from 'react'
@@ -39,10 +40,19 @@ export const Recipe = ({stateCart, dispatch}) => {
 
     <Presentation info={stateCart.recipes[0]}/>
 
-    <div className="container seccion">
+    <div className=" container  seccion seccion-b">
+
+      <SingleInfo info={stateCart.recipes[0]}/>
+
+      <div className=" container  container-video">
+
+          <iframe height="100%" width={"100%"} src="https://www.youtube.com/embed/HntGAHRFjUE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+      </div>
+
 
     
-    <iframe width="50%" height="300rem" src="https://www.youtube.com/embed/HntGAHRFjUE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
     </div>
@@ -53,7 +63,7 @@ export const Recipe = ({stateCart, dispatch}) => {
 
 
 
-    <Footer variant={'a'} state={stateCart} dispatch={dispatch}></Footer>
+    <Footer variant={'b'} state={stateCart} dispatch={dispatch}></Footer>
 
     
 

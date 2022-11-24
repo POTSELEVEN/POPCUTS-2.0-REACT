@@ -6,7 +6,7 @@ import { Image } from "./tools/tags/image"
 import imagei from '../assets/proteic-sushi.png'
 import { ButtonIcon } from "./tools/tags/buttonIcon"
 
-export const ItemCard = ({ path}) => {
+export const ItemCard = ({path}) => {
 
     
     const data = {name: 'sushi proteico', price: 300, image: imagei, id: 2, amount:3,info:{title:'lorem', body: 'lorem'}}
@@ -15,9 +15,9 @@ export const ItemCard = ({ path}) => {
 
     const history = useNavigate()
 
-    const redirect = (path) => {
+    const redirect = (x) => {
 
-        history(path)
+        history(x)
 
     }
 

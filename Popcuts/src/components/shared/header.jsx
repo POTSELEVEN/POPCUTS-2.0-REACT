@@ -2,7 +2,7 @@
 import { Image } from '../tools/tags/image'
 
 import { Cart } from './cart/cart-icon'
- import {Login } from './login'
+ import {LoginButton} from './login/LoginButton'
  import {Favorites } from './favorites'
  import logo from '../../assets/logo.png'
 
@@ -39,7 +39,7 @@ export const Header = ({activepage, pages, statecart, dispatch}) => {
 
             <Cart statecart={statecart} dispatch={dispatch}/>
             <Favorites />
-            <Login />
+            <LoginButton statecart={statecart} dispatch={dispatch}/>
             
         </nav>
         

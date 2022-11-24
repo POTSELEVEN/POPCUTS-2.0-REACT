@@ -35,7 +35,7 @@ export const Presentation =( info , images) => {
 
                 <h1 className="title title-presentation">{title}<span> </span></h1>
 
-                <p className="info-text">{body}</p>
+                <p className="info-text">{body.map((line)=> <>{line}<br/></>)}</p>
 
                 <button className="button button-presentation">Get started</button>
 
