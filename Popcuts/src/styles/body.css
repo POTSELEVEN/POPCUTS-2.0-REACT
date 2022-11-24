@@ -173,8 +173,14 @@ border-radius: 1.25rem;
 
     position: fixed;
 
-    right: 5rem;
-    bottom: 5rem;
+    right: 2%;
+    bottom: 2%;
+
+}
+
+.bordesito{
+
+border-radius: .5rem;
 
 }
 

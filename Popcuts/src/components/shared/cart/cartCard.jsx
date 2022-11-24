@@ -37,13 +37,13 @@ export const CartCard = ({stateCart, dispatch, condition}) =>{
 
                 <ButtonIcon src={plusIcon} clase='button-icon-checkout'/>
 
-                <button className="button button-checkout "><Link className="subtitle subtitle-checkout " to={"/https://www.paypal.me/elpotes11"}>checkout</Link></button>
+                <button className="button button-checkout "><a className="subtitle subtitle-checkout " href='https://www.paypal.me/elpotes11'> checkout</a></button>
 
             </div>
 
 
 
-
+          
 
         </div>
 

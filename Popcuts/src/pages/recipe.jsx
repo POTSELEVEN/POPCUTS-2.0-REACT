@@ -7,18 +7,53 @@ import { SingleInfo } from '../components/tools/tags/SingleInfo'
 
 import { cartInitialState, cartReducer } from '../components/shared/cart/cartReducer'
 import { useReducer } from 'react'
-import { useState } from 'react'
-import { CardSection } from '../components/shared/cardsection'
+import { useState, useEffect } from 'react'
+
 import { TYPES } from '../components/shared/cart/cartActions'
+import { PresentationP } from '../components/presentationP'
 
 
+import {useParams} from 'react-router-dom'
 
+import Global from '../global'
+import axios from 'axios'
 
 
 
 export const Recipe = ({stateCart, dispatch}) => {
 
   
+  const params = useParams()
+
+  const index = params.index
+
+
+  
+
+
+
+
+
+
+  const [recipes, setrecipes] = useState([])
+
+  const url = Global.urlR
+
+  
+
+
+  useEffect(() => {
+      getrecipes();
+      console.log(recipes);
+  },[recipes.length]);
+
+
+
+  const getrecipes = () => {
+      axios.get(url + "recipes").then(res => {
+          setrecipes(res.data.recipes);
+      });
+  }
 
   
 
@@ -27,7 +62,7 @@ export const Recipe = ({stateCart, dispatch}) => {
 
   
 
-  // const [info, setInfo] = useState(stateCart.products[0])
+  // const [info, setInfo] = useState(stateCart.recipes[0])
   
   
 
@@ -38,18 +73,18 @@ export const Recipe = ({stateCart, dispatch}) => {
 
     {/* <CartCard stateCart={stateCart} dispatch={dispatch}/> */}
 
-    <Presentation info={stateCart.recipes[0]}/>
+    {recipes.length > 0 && <PresentationP info={recipes[index]}/>}
 
     <div className=" container  seccion seccion-b">
 
-      <SingleInfo info={stateCart.recipes[0]}/>
+    {recipes.length > 0 && <SingleInfo info={recipes[index]}/>}
 
-      <div className=" container  container-video">
+    {recipes.length > 0 && <div className=" container  container-video">
 
-          <iframe height="100%" width={"100%"} src="https://www.youtube.com/embed/HntGAHRFjUE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <iframe height="100%" width={"100%"} src={`${recipes[index].tutorialLink}`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
-      </div>
+      </div>}
 
 
     

@@ -91,7 +91,7 @@ img{
 .Header {
     position: relative;
 
-    max-width: 100%;
+    width: 100%;
     height: auto;
 
     padding: 1.3rem;
@@ -115,6 +115,9 @@ img{
     background-color: var(--light);
 
     flex-direction: column;
+
+    margin: 0;
+    max-width: 100%;
 }
 
 .seccion-b, .seccion-b h1.title{
@@ -159,6 +162,47 @@ align-items: center;
 
     background-color: var(--primary);
 }
+
+.button-user{
+
+        background-color: transparent !important;
+
+        width: 5rem !important;
+
+
+
+}
+
+.card-options-user{
+
+
+    position: fixed;
+    right: .5rem;
+    
+    flex-direction: column;
+
+    padding: 1rem;
+    margin-top: .5rem;
+    border-radius: 1rem;
+
+    width: max-content;
+
+    background-color: var(--cardcolor);
+
+}
+
+.option-user{
+
+    font-size: 2rem !important;
+    background-color: var(--cardcolor);
+    border-radius: 0rem;
+
+
+}
+
+
+
+
 @media (max-width: 800px){
 
     .Header{

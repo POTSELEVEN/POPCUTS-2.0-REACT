@@ -5,15 +5,23 @@ import { Image } from "./tools/tags/image"
 
 import imagei from '../assets/proteic-sushi.png'
 import { ButtonIcon } from "./tools/tags/buttonIcon"
+import { useState, useEffect } from "react"
 
-export const ItemCard = ({path}) => {
+export const ItemCard = ({i,path, item}) => {
 
     
-    const data = {name: 'sushi proteico', price: 300, image: imagei, id: 2, amount:3,info:{title:'lorem', body: 'lorem'}}
+   
+
     
-    const {name,price,image,amount,info}= data
+    const [name, setName] = useState(item.name)
+    
+    const [price, setPrice] = useState(item.price)
+
+    const [img, setImg] = useState(item.imageLink)
 
     const history = useNavigate()
+
+    
 
     const redirect = (x) => {
 
@@ -26,19 +34,22 @@ export const ItemCard = ({path}) => {
     return (
 
 
-        <button onClick={()=>redirect(path)} className="item-card" >
+    <button onClick={()=>redirect(`${path}/${i}`)} className="item-card" >
 
             <div className="container container-image container-image-item">
 
-            <Image img={image} clase='image image-item'/>
+
+            <Image img={img} clase='image image-item bordesito'/>
 
             </div>
 
             <div className="info info-item">
 
             <p className="subtitle subtitle-cart">{name}</p>
-            <p className="subtitle subtitle-cart">{price}</p>
 
+            { price &&
+            <p className="subtitle subtitle-cart">{price}</p>
+            }
             </div>
 
             <div className="container container-buttons container-buttons-item">

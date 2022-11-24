@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { Home } from "./pages/home";
+
 import { MainApp } from './MainApp';
 import './index.css'
 
@@ -12,10 +12,21 @@ import './styles/body.css'
 import './styles/itemcard.css'
 import { BrowserRouter } from 'react-router-dom';
 
+
+import {firebaseApp} from './firebase/config'
+
+firebaseApp
+
+
 ReactDOM.createRoot(document.getElementById('root')).render(
+  
   <BrowserRouter>
+  
     <MainApp />
 
-    </BrowserRouter>
+  
+
+  </BrowserRouter>
+  
   
 )

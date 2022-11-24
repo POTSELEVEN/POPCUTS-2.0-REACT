@@ -6,8 +6,12 @@ import { ItemCard } from '../components/card'
 
 import { cartInitialState, cartReducer } from '../components/shared/cart/cartReducer'
 import { useReducer } from 'react'
-import { useState } from 'react'
-import { CardSection } from '../components/shared/cardsection'
+import { useState, useEffect } from 'react'
+import {  CardSectionR } from '../components/shared/cardsectionR'
+
+import Global from '../global'
+import axios from 'axios'
+
 
 
 
@@ -19,9 +23,27 @@ export const Recipes = ({stateCart, dispatch}) => {
 
  
 
+  const [recipes, setrecipes] = useState([])
+
+  const url = Global.urlR
+
   
 
-  // const [info, setInfo] = useState(stateCart.products[0])
+
+  useEffect(() => {
+      getrecipes();
+      console.log(recipes);
+  },[recipes.length]);
+
+
+
+  const getrecipes = () => {
+      axios.get(url + "recipes").then(res => {
+          setrecipes(res.data.recipes);
+      });
+  }
+
+  // const [info, setInfo] = useState(stateCart.recipes[0])
   
   
 
@@ -34,10 +56,16 @@ export const Recipes = ({stateCart, dispatch}) => {
 
     <Presentation info={stateCart.Recipes[0]}/>
 
-    <CardSection path={'/Recipe'} info={stateCart.Recipes[0]} variant={'b'}/>
 
-    <CardSection path={'/Recipe'} info={stateCart.Recipes[2]} variant={'b'}/>
+    <div className={`seccion seccion-b seccion-card container`}>
 
+    <div className="container container-cards container-cards-products">
+
+    { recipes.map((item, i)=> {return <div className="container"><ItemCard i={i} path={'/Recipe'} item={item} /> </div>})}
+
+    </div>
+
+</div>
 
 
 

@@ -37,7 +37,7 @@ export const Presentation =( info , images) => {
 
                 <p className="info-text">{body.map((line)=> <>{line}<br/></>)}</p>
 
-                <button className="button button-presentation">Get started</button>
+                {/* <button className="button button-presentation">Get started</button> */}
 
                 </div>
 
@@ -45,7 +45,7 @@ export const Presentation =( info , images) => {
 
             <div className="container container-img container-img-presentation">
 
-                <Image img={img}/>
+                <Image img={img} />
                 
             </div>
 

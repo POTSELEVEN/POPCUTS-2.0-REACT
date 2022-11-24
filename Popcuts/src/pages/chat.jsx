@@ -7,9 +7,15 @@ import 'stream-chat-react/dist/css/v2/index.css';
 import 'stream-chat-react/dist/css/v2/index.css';
 import '../styles/chat.css';
 
+
+export const ChatCard = ({name}) => {
+
+
+ const username = name 
+
 const chatClient = new StreamChat('vwszc4cqmua2');
-const userToken = ' ';
-// const userToken = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoibHVja3ktYnV0dGVyZmx5LTIifQ.wN4kjxBFHsvQTitEJ7DlG4VpgK-aULw1KK61TRn49is';
+
+const userToken = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoibHVja3ktYnV0dGVyZmx5LTIifQ.wN4kjxBFHsvQTitEJ7DlG4VpgK-aULw1KK61TRn49is';
 
 
 
@@ -23,24 +29,30 @@ chatClient.connectUser(
   userToken,
 );
 
-const channel = chatClient.channel('messaging', 'custom_channel_id', {
+
+
+const channel = chatClient.channel('messaging', username, {
   // add as many custom fields as you'd like
   image: 'https://www.drupal.org/files/project-images/react.png',
-  name: 'Talk about React',
-  members: ['lucky-butterfly-2', 'lucky-butterfly-1'],
+  name: username,
+  members: ['lucky-butterfly-2',],
 });
 
-export const ChatCard = () => (
-  <Chat client={chatClient} theme='str-chat__theme-light'>
+
+return (
+  <Chat client={chatClient} theme='str-chat__theme-light' >
     <Channel channel={channel}>
       <Window>
-        <ChannelHeader />
+        {/* <ChannelHeader /> */}
         <MessageList />
         <MessageInput />
       </Window>
       <Thread />
     </Channel>
   </Chat>
-);
+
+)
+
+};
 
 
